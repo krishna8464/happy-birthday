@@ -117,3 +117,12 @@
     transform: rotate(360deg);
   }
 }
+
+#wishdiv{
+  border-radius: 15px;
+  background: #174ECF;
+background: linear-gradient(to right, #174ECF 0%, #CF40B7 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+}

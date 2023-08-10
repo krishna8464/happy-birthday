@@ -197,5 +197,50 @@ $('document').ready(function(){
 
 
 
+// <span id="day"></span> Day : <span id="hour"></span> Hr : <span id="min"></span> Min : <span id="sec"></span> Sec </span>
+	
+
+let day = document.getElementById("day");
+let hour = document.getElementById("hour");
+let min = document.getElementById("min");
+let sec = document.getElementById("sec");
+
+// Set the date we're counting down to
+var countDownDate = new Date("Aug 11, 2023 00:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  // document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  // + minutes + "m " + seconds + "s ";
+//   console.log(`${days} Days-${hours} hours-${minutes} minutes-${seconds}seconds`);
+
+  day.innerHTML= `${days}`;
+  hour.innerHTML = `${hours}`;
+  min.innerHTML = `${minutes}`;
+  sec.innerHTML= `${seconds}`
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("wishdiv").innerHTML = "Wish You Many more happy returns of the day PANDA PAPA Lov you sooo much❤️❤️❤️❤️🐼❤️🐻";
+    console.log("EXPIRED")
+  }
+}, 1000);
+
+
 
 //alert('hello');
